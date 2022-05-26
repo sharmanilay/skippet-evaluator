@@ -18,7 +18,7 @@ type childrenResultsProps = {
   value: boolean | undefined
 }
 
-const constantOperators = ['undefined', 'and', 'or', 'not', 'nor', 'nand', 'constant']
+const constantOperators = ['undefined', 'or', 'nor', 'and', 'nand', 'not', 'constant']
 
 /**
  * def: This component is being used recursively to create the tree structure of the arguments/operators
@@ -46,8 +46,8 @@ const EvaluatorUnit: React.FC<{
     if (
       selectedOperator === 'and' ||
       selectedOperator === 'or' ||
-      selectedOperator === 'xor' ||
-      selectedOperator === 'nand'
+      selectedOperator === 'nand' ||
+      selectedOperator === 'nor'
     ) {
       setChildrenResults([
         {
@@ -178,7 +178,8 @@ const EvaluatorUnit: React.FC<{
       selectedOperator === 'or' ||
       selectedOperator === 'xor' ||
       selectedOperator === 'not' ||
-      selectedOperator === 'nand'
+      selectedOperator === 'nand' ||
+      selectedOperator === 'nor'
     ) {
       return (
         <Box mt={1} pl={1} display="flex" flexDirection="column">
